@@ -4,4 +4,17 @@
 
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= button_to "Destroy", article_path(@article), method: :delete %>
+
+<%
+=begin
+%>
+  link_to "Destory"で削除できる方法が見つかっていないため、一旦コメントアウト
+  <li><% link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+<%
+=end
+%>
 </ul>
